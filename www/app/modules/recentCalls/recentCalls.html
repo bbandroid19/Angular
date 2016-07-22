@@ -1,0 +1,51 @@
+<div class="searchResultsScreen">
+    <div class="navBar">
+        <div id="EYLogoNavbar">
+            <div id="navigationBarTitle" class="ng-binding">
+                Recent Calls
+            </div>
+        </div>
+        <div class="leftmenuholder" ng-click="showLeftMenu()">
+            <div id="hammenu">
+                <div class=".container">
+                    <div class="menu btn-back">
+                        <div class="icon"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="searchResults fullPage">
+        <div id="topOfScreen"></div>
+        <div>
+            <div class="animation" ng-repeat="item in recentCall | orderBy:'-date'" type="item-text-wrap">
+                <div class="employeeresultrow">
+                    <div id="contactInfo">
+                        <div class="firstRow">
+                            <div class="firstName"> {{item.Title}}</div>
+                            <div class="deleteCall" ng-click="removeRecent(item)"><i class="fa fa-trash-o"></i></div>
+                        </div>
+                        </br>
+                        <div class="secondRow">
+                            <div id="dcallIcon" ng-click="callPhone(item,item.number)">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div id="second_wrap">
+                                <div class="serviceline">{{item.number}}</div>
+                                <div class="chevronWrap" am-time-ago="item.date"></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="noRecent" ng-if="!recentCall.length"> Call Log Empty </div>
+        </div>
+    </div>
+    <!--
+
+
+    </div>

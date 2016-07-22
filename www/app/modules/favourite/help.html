@@ -1,0 +1,79 @@
+<div class="searchResultsScreen">
+    <div class="navBar">
+        <div id="EYLogoNavbar">
+            <div id="navigationBarTitle" class="ng-binding">
+                Help
+            </div>
+        </div>
+        <div class="leftmenuholder" ng-click="showLeftMenu()">
+            <div id="hammenu">
+                <div class=".container">
+                    <div class="menu btn-back">
+                        <div class="icon"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="searchResults fullPage">
+        <div id="topOfScreen"></div>
+        <div>
+            <div ng-repeat="item in speedDial" type="item-text-wrap">
+                <div class="employeeresultrow">
+                    <div id="contactInfo">
+                        <div class="firstRow">
+                            <div class="firstName">{{item.Title}} </div>
+                            <div class="favBtnwrap" ng-click="addtoFav($index)"></div>
+                        </div>
+                        </br>
+                        <!--
+<div class="secondRow" ng-click="expand($index)">
+    <div id="dcallIcon" ng-click="callPhone(item,item.TollFree)">
+        <i class="fa fa-phone"></i>
+    </div>
+    <div class="serviceline">{{item.Dial_x0020_in_x0020_Numbers}}</div>
+    <div class="chevronWrap" ng-click="expand($index)"><i class="fa fa-chevron-down"></i></div>
+</div>
+-->
+
+                        <div class="secondRow">
+                            <div id="dcallIcon" class="flex" ng-click="callPhone(item,item.Dial_x0020_in_x0020_Numbers)">
+                                <i class="fa fa-phone"></i>
+                                <div class="serviceline">Toll Free - {{item.Dial_x0020_in_x0020_Numbers}}</div>
+                            </div>
+                            <div id="second_wrap" ng-click="expand($index)">
+
+                                <div class="chevronWrap"><i class="fa fa-chevron-down"></i></div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="extra-row employeeresultrow" ng-show="activePosition == $index">
+                    <div id="dcontactDetailContainer">
+                        <div class="dWorkPhoneRow" ng-if="item.Res_x0020__x0026__x0020_Support_">
+                            <div id="middleHolder"></div>
+                            <div id="dleftElementHolder">
+                                <div id="dinfoTitle">Res.& Support</div>
+                                <div id="dcontactNumber">
+                                    {{item.Res_x0020__x0026__x0020_Support_}}
+                                </div>
+
+                            </div>
+                            <div class="drightElementHolder">
+
+                                <div id="dcallIcon" ng-click="callPhone(item,item.Res_x002e__x0020__x0026__x0020_S)">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="noFav" ng-if="!speedDial.length"> No Data Available</div>
+        </div>
+    </div>

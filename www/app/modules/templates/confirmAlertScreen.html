@@ -1,0 +1,24 @@
+<div id="target" ng-controller="recentCallsController">
+    <div id="confirmScreen">
+        <div id="confirmMessageHolder">
+            <div id="confirmMessageTitleHolder">
+                <div id="middleHolder"></div>
+                <div id="confirmMessageTitleText"> Ey Dial </div>
+            </div>
+            <div id="confirmMessageBodyHolder">
+                <div id="middleHolder"></div>
+                <div id="confirmMessageText"> {{confirmMessage}} </div>
+            </div>
+            <div id="confirmMessageButtonHolder">
+                <div id="leftButtonHolder" ng-click="closeThisDialog(\'Yes\')">
+                    <div id="middleHolder"></div>
+                    <div id="confirmMessageButtonText"> Yes </div>
+                </div>
+                <div id="rightButtonHolder" ng-click="closeThisDialog(\'No\')">
+                    <div id="middleHolder"></div>
+                    <div id="confirmMessageButtonText"> No </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

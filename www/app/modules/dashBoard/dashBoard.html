@@ -1,0 +1,70 @@
+<div class="searchResultsScreen">
+    <div class="navBar">
+        <div id="EYLogoNavbar">
+            <img id="EYLogoNavbarImage" src="./images//EYLogo512White.png" />
+        </div>
+        <div class="leftmenuholder" ng-click="showLeftMenu()">
+            <div id="hammenu">
+                <div class=".container">
+                    <div class="menu btn-back">
+                        <div class="icon"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightmenuholder" ng-click="refresh()">
+            <div id="hammenu">
+                <i class="fa fa-refresh"></i>
+            </div>
+        </div>
+    </div>
+
+    <div id="searchBar">
+        <form ng-submit="">
+            <div id="searchComponent">
+                <div id="searchIconHolder" ng-click="search()">
+                    <i class="fa fa-search"></i>
+                </div>
+                <div id="searchInputHolder">
+                    <input id="search" type="search" required ng-model="searchQuery" placeholder="Search EY Dial-In" autocomplete="off" autocapitalize="off" spellcheck="false">
+                </div>
+                <div id="clearSearchHolder" ng-click="clearAll()">
+                    <i class="fa fa-times"></i>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="searchResults">
+        <div id="topOfScreen"></div>
+        <div>
+            <div ng-repeat="item in city | filter:searchQuery" type="item-text-wrap">
+                <div class="employeeresultrow ">
+                    <div id="contactInfo" ng-click="clickToOpen(item)">
+                        <div class="firstRow">
+                            <div class="firstName">{{item.Title}} </div>
+                            <div class="favBtnwrap" ng-click="addtoFav(item.ID,$event)"><i class="fa" ng-class="{'active':item.isFavourite}"></i></div>
+                        </div>
+                        </br>
+                        <div class="secondRow">
+                            <div id="dcallIcon" class="flex" ng-click="callPhone(item,item.tollfree,$event)">
+                                <i class="fa fa-phone"></i>
+                                <div class="serviceline">Toll Free - {{item.tollfree}}</div>
+                            </div>
+                            <div id="second_wrap">
+
+                                <div class="chevronWrap"><i class="fa fa-info-circle"></i></div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="noFav" type="item-text-wrap" ng-if="!city.length"> No Data Available.</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="searchResultsScreen">
+    <div class="navBar">
+        <div id="EYLogoNavbar">
+            <div id="navigationBarTitle" class="ng-binding">
+                Favourites
+            </div>
+        </div>
+        <div class="leftmenuholder" ng-click="showLeftMenu()">
+            <div id="hammenu">
+                <div class=".container">
+                    <div class="menu btn-back">
+                        <div class="icon"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="searchResults fullPage">
+        <div id="topOfScreen"></div>
+        <div>
+            <div ng-repeat="item in favourite " type="item-text-wrap">
+                <div class="employeeresultrow ">
+                    <div id="contactInfo" ng-click="clickToOpen($index)">
+                        <div class="firstRow">
+                            <div class="firstName">{{item.Title}} </div>
+                            <div class="favBtnwrap" ng-click="addtoFav($index,$event)"><i class="fa" ng-class="{'active':item.isFavourite}"></i></div>
+                        </div>
+                        </br>
+                        <div class="secondRow">
+                            <div id="dcallIcon" class="flex" ng-click="callPhone(item,item.tollfree,$event)">
+                                <i class="fa fa-phone"></i>
+                                <div class="serviceline">Toll Free - {{item.tollfree}}</div>
+                            </div>
+                            <div id="second_wrap">
+                                <div class="chevronWrap"><i class="fa fa-info-circle"></i></div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="noFav" ng-if="!favourite.length"> You currently have no favourites</div>
+        </div>
+
+    </div>
+</div>

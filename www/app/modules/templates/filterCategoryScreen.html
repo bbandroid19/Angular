@@ -1,0 +1,61 @@
+<div id="filterScreen">
+ <div class="navBar">
+        <div id="navigationBar" >
+              <div class="closebutton" ng-click="closeThisDialog({{value}})"> <i class="fa fa-angle-left"></i></div>
+
+            <div id="navigationBarTitle" >
+                Filters
+            </div>
+
+        </div>
+     </div>
+     <div id="primaryCategorySection">
+     	<div id="primaryCategoryTable">
+	<div class="primaryCategoryRow"  ng-click = "openFilterSubCat('Rank')" >
+		<!-- ng-click="openFilterSubCat('Rank')" -->
+		<div id="middleHolder"></div>
+     		<div class="primaryCategoryText">
+			Rank  ({{rankSelectedCount}} selected)
+     		</div>
+     		<div class="primaryCategoryAccessory">
+     			<i class="fa fa-angle-right"></i>
+     		</div>
+     	</div>
+     	<div class="primaryCategoryRow"  ng-click = "openFilterSubCat('Service Line')">
+     		<div id="middleHolder"></div>
+     		<div class="primaryCategoryText">
+			Service Line ({{serviceLineSelectedCount}} selected)
+     		</div>
+     		<div class="primaryCategoryAccessory">
+     			<i class="fa fa-angle-right"></i>
+     		</div>
+     	</div>
+     	<div class="primaryCategoryRow"  ng-click = "openFilterSubCat('Region')">
+     		<div id="middleHolder"></div>
+     		<div class="primaryCategoryText">
+			Region ({{regionSelectedCount}} selected)
+     		</div>
+     		<div class="primaryCategoryAccessory">
+     			<i class="fa fa-angle-right"></i>
+     		</div>
+     	</div>
+     	</div>
+
+     <div id="applyButtonHolder" ng-click="applyFilter();">
+          <div id="middleHolder"></div>
+            <div id="clearAllButton">
+            Apply
+            </div>
+      </div>
+       <div id="resetButtonHolder" ng-click="resetFilters();">
+          <div id="middleHolder"></div>
+            <div id="clearAllButton">
+            Reset filters
+            </div>
+      </div>
+
+     </div>
+
+	
+	
+</div>

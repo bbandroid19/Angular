@@ -1,0 +1,119 @@
+<div id="target" ng-controller="dashBoardController" style="height: 100%;background: #f7f7f7;">
+    <div class="employeeresultrow " style="margin:0px">
+        <div class="modalTitle">{{Title}}</div>
+        <div class="modalContentWrap" id="modaDataWrap">
+            <div id="dcontactDetailContainer " class="borderdiv" ng-repeat="data in currentArr">
+
+                <div class="dWorkPhoneRow cityHeader" ng-click="expand($index)" ng-if="currentArr.length > 1">
+                    <div id="dleftElementHolder" style="width: 92%;">
+                        {{data.Title | split :',':1}}
+                    </div>
+                    <div>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+
+                </div>
+                <div class="extra-row" id="extra_{{$index}}" ng-show="activePosition == $index">
+                    <div class="dWorkPhoneRow" ng-if="data.Local" ng-click="callPhone(data,data.Local,'Local')">
+                        <div id="middleHolder"></div>
+                        <div id="dleftElementHolder">
+                            <div id="dinfoTitle">Local</div>
+                            <div id="dcontactNumber">
+                                {{data.Local}}
+                            </div>
+
+                        </div>
+                        <div class="drightElementHolder">
+
+                            <div id="dcallIcon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="dPreferredPhoneRow restict" ng-if="data.Restrictions">
+                        <div id="middleHolder"></div>
+                        <div id="dleftElementHolder">
+                            <div id="dinfoTitle">Restrictions</div>
+                            <div id="dcontactNumber">
+                                {{data.Restrictions |htmlToPlaintext }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="dWorkPhoneRow" ng-if="data.Res_x002e__x0020__x0026__x0020_S" ng-click="callPhone(data,data.Res_x002e__x0020__x0026__x0020_S,'Res & Support')">
+                        <div id="middleHolder"></div>
+                        <div id="dleftElementHolder">
+                            <div id="dinfoTitle">Res.& Support</div>
+                            <div id="dcontactNumber">
+                                {{data.Res_x002e__x0020__x0026__x0020_S}}
+                            </div>
+
+                        </div>
+                        <div class="drightElementHolder">
+
+                            <div id="dcallIcon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="extra-row" ng-if="currentArr.length == 1">
+                    <div class="dWorkPhoneRow" ng-if="data.Local" ng-click="callPhone(data,data.Local,'Local')">
+                        <div id="middleHolder"></div>
+                        <div id="dleftElementHolder">
+                            <div id="dinfoTitle">Local</div>
+                            <div id="dcontactNumber">
+                                {{data.Local}}
+                            </div>
+
+                        </div>
+                        <div class="drightElementHolder">
+
+                            <div id="dcallIcon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="dPreferredPhoneRow restict" ng-if="data.Restrictions">
+                        <div id="middleHolder"></div>
+                        <div id="dleftElementHolder">
+                            <div id="dinfoTitle">Restrictions</div>
+                            <div id="dcontactNumber">
+                                {{data.Restrictions |htmlToPlaintext }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="dWorkPhoneRow" ng-if="data.Res_x002e__x0020__x0026__x0020_S" ng-click="callPhone(data,data.Res_x002e__x0020__x0026__x0020_S,'Res & Support')">
+                        <div id="middleHolder"></div>
+                        <div id="dleftElementHolder">
+                            <div id="dinfoTitle">Res.& Support</div>
+                            <div id="dcontactNumber">
+                                {{data.Res_x002e__x0020__x0026__x0020_S}}
+                            </div>
+
+                        </div>
+                        <div class="drightElementHolder">
+
+                            <div id="dcallIcon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html ng-app="eyDial">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Application</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=”apple-mobile-web-app-capable” content=”no”>
+    <meta name="format-detection" content="telephone=no">
+    <meta name=”apple-mobile-web-app-status-bar-style” content=”black”>
+    <!-- injector:css -->
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="./app/lib/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="app/lib/ngDialog/css/ngDialog.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+
+    <!-- endinjector -->
+</head>
+
+<body>
+
+    <div class="ngDirectory customFade" ng-class="{'nofade':showPage}">
+        <div class="statusbar"></div>
+        <div class="leftMenu" ng-controller="mainController">
+            <div id="titleHolder">
+                <div id="logoHolder">
+                    EY Dial
+                </div>
+            </div>
+            <div id="menuContainer">
+                <div class="menuHolder" ng-click="menuSelect('#homeIconHolder','#home','search')">
+                    <div id="homeSelect"></div>
+                    <div id="homeIconHolder">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <div class="menuTitleHolder">
+                        <div id="home">
+                            Search
+                        </div>
+                    </div>
+                </div>
+                <div class="menuHolder" ng-click="menuSelect('#recentIconHolder','#recent','recent')">
+                    <div id="recentSelect"></div>
+                    <div id="recentIconHolder">
+                        <span class="fa-stack fa-3x">
+                                  
+                                  <i class="fa fa-clock-o fa-stack-1x clockHands"></i>
+                                  <i class="fa fa-circle-o fa-stack-1x deleteCircle"></i>
+                                  <i class="fa fa-circle-thin fa-stack-1x thinCircle"></i>
+                                </span>
+                    </div>
+                    <div class="menuTitleHolder">
+                        <div id="recent">
+                            Recent Calls
+                        </div>
+                    </div>
+                </div>
+                <div class="menuHolder" ng-click="menuSelect('#favoritesIconHolder','#favorites','favourites')">
+                    <div id="favoritesSelect"></div>
+                    <div id="favoritesIconHolder">
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <div class="menuTitleHolder">
+                        <div id="favorites">
+                            Favorites
+                        </div>
+                    </div>
+                </div>
+                <div class="menuHolder" ng-click="menuSelect('#helpIconHolder','#helpTitle','help')">
+                    <div id="helpTitleSelect"></div>
+                    <div id="helpIconHolder">
+                        <span class="fa-stack fa-lg questionMarkHolder">
+                                  <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                  <i class="fa fa-question fa-stack-1x questionMark" ></i>
+                              </span>
+                    </div>
+                    <div class="menuTitleHolder">
+                        <div id="helpTitle">
+                            Help
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="appVersion">
+                <b>POC</b> - v1.0
+            </div>
+        </div>
+        <loader></loader>
+        <div id="ngView" class="ngView" ui-view></div>
+
+    </div>
+
+
+    <script src="app/lib/jquery.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="cordova_plugins.js"></script>
+    <script src="app/lib/angular.js"></script>
+    <!-- injector:js -->
+    <script src="app/lib/angular-ios9-uiwebview.patch.js"></script>
+
+    <script src="app/lib/angular-touch.min.js"></script>
+    <script src="app/lib/fastclick.js"></script>
+    <script src="app/lib/moment.js"></script>
+    <script src="app/lib/angular-moment.js"></script>
+    <script src="app/lib/angular-animate.js"></script>
+    <script src="app/lib/angular-ui-router.min.js"></script>
+    <script src="app/lib/ngprogress.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/router.js"></script>
+    <script src="app/lib/indexeddbshim.js"></script>
+
+    <script src="app/modules/shared/services/service.js"></script>
+    <script src="app/modules/shared/services/dataService.js"></script>
+    <script src="app/modules/shared/services/dbService.js"></script>
+    <script src="app/modules/shared/filters/interpolate.js"></script>
+    <script src="app/modules/shared/filters/filter.js"></script>
+    <script src="app/modules/shared/factory/factory.js"></script>
+    <script src="app/modules/shared/directives/directives.js"></script>
+    <script src="app/modules/help/helpController.js"></script>
+    <script src="app/modules/dashBoard/dashBoardController.js"></script>
+    <script src="app/modules/favourite/favouriteController.js"></script>
+    <script src="app/modules/recentCalls/recentCallsController.js"></script>
+    <script src="app/lib/ngDialog/js/ngDialog.js"></script>
+    <script src="app/config-generated.js"></script>
+    <!-- endinjector -->
+</body>
+
+</html>

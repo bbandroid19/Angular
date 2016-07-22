@@ -1,0 +1,45 @@
+<div id="filterScreen">
+ <div class="navBar">
+        <div id="navigationBar" >
+              <div class="closebutton" ng-click="closeThisDialog({{value}})"> <i class="fa fa-angle-left"></i></div>
+
+            <div id="navigationBarTitle" >
+                {{navBarTitle}}
+            </div>
+            <div id="confirmButton" ng-click="applySubCategories();">
+                <div id="confirmButtonText">
+                    Confirm
+                </div>
+            </div>
+        </div>
+     </div>
+     <div id="primaryCategorySection">
+     	<div id="primaryCategoryTable">
+               <div class="primaryCategoryRow" ng-repeat = "category in categoryArray"  ng-click="selectSubCategory(category.RefinementName)">
+                    <div id="middleHolder"></div>
+                     <div id="checkboxHolder">
+                        <div class="fa-stack checkboxIconColor" > 
+                            <!-- id="{{rank.refinementName.Value | removeWhiteSpaceChars | lowercase}}"> -->
+                                <i class="fa fa-square-o fa-stack-2x checkboxColor"></i>
+                                <i class="fa fa-check fa-stack-1x checkIconColor" id="{{category.RefinementName | removeWhiteSpaceChars | lowercase}}" ></i>
+                        </div>
+                    </div>
+                    <div class="subCategoryText">
+                        {{category.RefinementName}} ({{category.RefinementCount}})
+                    </div>
+               </div>
+     	</div>
+
+<!--      <div id="applyButtonHolder" ng-click="applySubCategories();">
+          <div id="middleHolder"></div>
+            <div id="clearAllButton">
+                Apply
+            </div>
+      </div> -->
+
+
+     </div>
+
+	
+	
+</div>
